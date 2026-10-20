@@ -1,0 +1,27 @@
+[Unit]
+Description=TopUpDaddy Google Pay dashboard observer
+After=network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=600
+StartLimitBurst=3
+
+[Service]
+Type=simple
+User=youpi
+Group=youpi
+WorkingDirectory=/opt/youpi-pg
+EnvironmentFile=/etc/youpi/gpay-observer.env
+Environment=PLAYWRIGHT_BROWSERS_PATH=/opt/youpi-pg/data/browsers
+ExecStart=/usr/bin/node apps/gpay-observer/src/index.js
+Restart=on-failure
+RestartSec=30
+TimeoutStopSec=30
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/youpi-pg/data
+
+[Install]
+WantedBy=multi-user.target

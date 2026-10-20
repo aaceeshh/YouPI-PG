@@ -11,6 +11,8 @@
 
 #  YOUPI PG V2
 
+TopUpDaddy integration branch: [Google Pay dashboard observer setup](docs/GPAY_DASHBOARD_OBSERVER.md) and [verified free-host comparison](docs/FREE_HOSTING_REVIEW_2026-10-20.md). The observer records settled receipts for review; it does not automatically settle orders or credit reseller wallets.
+
 ### A Self-Hosted UPI Payment Gateway for Merchants
 
 

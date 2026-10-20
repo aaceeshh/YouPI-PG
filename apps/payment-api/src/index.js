@@ -44,6 +44,7 @@ import { authGuard } from './auth-guard.js';
 import { registerPaymentRoutes } from './routes/payments.routes.js';
 import { registerCheckoutRoutes } from './routes/checkout.routes.js';
 import { registerPollerRoutes } from './routes/pollers.routes.js';
+import { registerGpayRoutes } from './routes/gpay.routes.js';
 import { registerAdminRoutes } from './routes/admin.routes.js';
 import { registerCustomerRoutes } from './routes/customer.routes.js';
 import { registerDeviceRoutes } from './routes/device.routes.js';
@@ -439,6 +440,7 @@ export function createPaymentApp(customDb = null, options = {}) {
   registerPaymentRoutes(server, context);
   registerCheckoutRoutes(server, context);
   registerPollerRoutes(server, context);
+  registerGpayRoutes(server, context);
   registerAdminRoutes(server, context);
   registerCustomerRoutes(server, context);
   registerDeviceRoutes(server, context);
