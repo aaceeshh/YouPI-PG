@@ -1,5 +1,25 @@
 # Configuration & Secret Management Guide
 
+## Google Pay dashboard observer
+
+The observer uses these additional variables; see [the setup and operating guide](GPAY_DASHBOARD_OBSERVER.md).
+
+| Variable | Default | Meaning |
+| --- | --- | --- |
+| `GPAY_TRANSACTIONS_URL` | Required | Exact merchant Transactions URL on pay.google.com |
+| `GPAY_RECEIVING_ACCOUNT_ID` | Required | Linked gateway receiving-account UUID |
+| `GPAY_PAYEE_VPA` | Required | VPA independently associated with that dashboard |
+| `OBSERVER_API_TOKEN` | Required | Existing payment API observer secret, minimum 32 characters |
+| `GPAY_CHANNEL` | `chromium` | Bundled Chromium, or an installed Playwright channel |
+| `GPAY_HEADLESS` | `true` | Worker mode; login always opens a visible browser |
+| `GPAY_POLL_SECONDS` | `60` | Polling interval, allowed 30-3600 seconds |
+| `GPAY_MAX_PAGES` | `10` | Full-scan bound, 1-550; hitting it stops delivery |
+| `GPAY_LOOKBACK_HOURS` | `48` | Recent-history window, 24-168 hours; requires verified descending date sort |
+| `GPAY_PROFILE_DIR` | `data/browser-sessions/gpay` | Private browser profile |
+| `GPAY_OBSERVER_DB_PATH` | `data/gpay-observer.sqlite` | Persistent receipt outbox |
+| `GPAY_HEALTH_PATH` | `data/gpay-observer-health.json` | Private atomic health snapshot |
+
+
 ## 1. Environment Parameters Reference
 
 | Variable | Default Value | Description |
